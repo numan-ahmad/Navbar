@@ -1,0 +1,38 @@
+.nav-fixed {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  .nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 30px 0px 20px;
+    .nav-heading{
+      width: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .search-bar {
+      margin-left: 20px;
+      input {
+        border: 3px solid #ccc;
+        height: 30px;
+        width: 300px;
+        border-radius: 20px;
+        padding: 0 10px 0 15px;
+      }
+      input:focus {
+        border: 3px solid #555;
+        outline: none;
+      }
+    }
+    .menu-container {
+      display: flex;
+      align-items: center;
+      .menu {
+        margin-left: 10px;
+      }
+    }
+  }
+}
