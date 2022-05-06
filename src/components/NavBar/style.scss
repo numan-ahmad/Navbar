@@ -7,14 +7,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 0px 30px 0px 20px;
-    .nav-heading{
-      width: 120px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+    flex-wrap: wrap;
     .search-bar {
       margin-left: 20px;
+      @media (max-width: 768px) {
+        display: none;
+      }
       input {
         border: 3px solid #ccc;
         height: 30px;
@@ -27,11 +25,45 @@
         outline: none;
       }
     }
+    .nav-mobile {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+        margin-right: 15px;
+        margin-left: auto;
+        flex-direction: column;
+        cursor: pointer;
+        span {
+          height: 2px;
+          width: 25px;
+          background: #7b7fda;
+          margin-bottom: 4px;
+          border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+          display: flex;
+        }
+      }
+    }
     .menu-container {
       display: flex;
       align-items: center;
+      @media (max-width: 768px) {
+        overflow: hidden;
+        flex-direction: column;
+        max-height: 0;
+        transition: max-height 0.3s ease-in;
+        width: 100%;
+      }
       .menu {
         margin-left: 10px;
+      }
+    }
+    .isopen {
+      max-height: unset;
+      .menu {
+        padding: 20px 15px;
+
       }
     }
   }

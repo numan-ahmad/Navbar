@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="nav-fixed">
@@ -11,7 +13,12 @@ const NavBar = () => {
           <div className="search-bar">
             <input type="search" />
           </div>
-          <div className="menu-container">
+          <div className="nav-mobile" onClick={() => setIsOpen(!isOpen)}>
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className={`menu-container ${isOpen ? "isopen" : ""}`}>
             <div className="menu">About Us</div>
             <div className="menu">Contact Us</div>
           </div>
